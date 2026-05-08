@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import { Boot } from '@/game/scenes/Boot';
 import { Preloader } from '@/game/scenes/Preloader';
 import { MainMenu } from '@/game/scenes/MainMenu';
-// import { Subway } from '@/game/scenes/Subway'; // To be implemented
+import { Subway } from '@/game/scenes/Subway';
 
 /**
  * Global Phaser Configuration
@@ -25,7 +25,7 @@ export const GameConfig: Phaser.Types.Core.GameConfig = {
     Boot,
     Preloader,
     MainMenu,
-    // Subway,
+    Subway,
   ],
   scale: {
     mode: Phaser.Scale.FIT,

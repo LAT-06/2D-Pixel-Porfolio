@@ -26,7 +26,7 @@ export class MainMenu extends Scene {
 
     startText.on('pointerdown', () => {
       console.log('Starting game...');
-      // this.scene.start('Subway');
+      this.scene.start('Subway');
     });
 
     // Simple hover effect
