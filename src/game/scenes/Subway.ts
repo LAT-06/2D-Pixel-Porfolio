@@ -22,13 +22,14 @@ export class Subway extends Scene {
     this.load.image('cyber-tileset-02', 'tilesets/neo_zero_tileset_02.png');
     this.load.image('cyber-buildings-01', 'tilesets/neo_zero_tiles_and_buildings_01.png');
     
+    // New Player Spritesheet: 16x32 frames
+    this.load.spritesheet('player-sprite', 'tilesets/player.png', {
+      frameWidth: 16,
+      frameHeight: 32
+    });
+    
     // JSON: Using your updated map
     this.load.tilemapTiledJSON('subway-map', 'maps/testmap.tmj');
-    
-    this.load.spritesheet('player-lat', 'https://labs.phaser.io/assets/sprites/dude.png', {
-      frameWidth: 32,
-      frameHeight: 48
-    });
   }
 
   create() {
@@ -43,7 +44,7 @@ export class Subway extends Scene {
       tilesetName: 'neo_zero_tileset_02'
     });
 
-    // 2. Get Spawn Point (Matches "SpawnPoint" in your Spawn layer)
+    // 2. Get Spawn Point
     const spawn = this.mapManager.getSpawnPoint('SpawnPoint');
 
     // 3. Setup Player
@@ -51,7 +52,7 @@ export class Subway extends Scene {
       scene: this,
       x: spawn.x,
       y: spawn.y,
-      texture: 'player-lat',
+      texture: 'player-sprite',
       speed: 180
     });
 
